@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button, Container, Heading, Input, useColorModeValue, useToast, VStack } from "@chakra-ui/react";
 import { useState } from "react";
-
+import { useProductStore } from "../store/product";
 
 function CreatePage() {
 
@@ -12,11 +12,11 @@ function CreatePage() {
 	});
 	// const toast = useToast();
 
-	
+	const { createProduct } = useProductStore();
 
 	const handleAddProduct = async () => {
         console.log(newProduct)
-	// 	const { success, message } = await createProduct(newProduct);
+	 	const { success, message } = await createProduct(newProduct);
 	// 	if (!success) {
 	// 		toast({
 	// 			title: "Error",
